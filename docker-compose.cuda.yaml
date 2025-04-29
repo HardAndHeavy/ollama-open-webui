@@ -1,6 +1,6 @@
 services:
   ollama:
-    image: ollama/ollama:0.6.5
+    image: ollama/ollama:0.6.6
     container_name: ollama
     deploy:
       resources:
@@ -11,14 +11,12 @@ services:
               capabilities: [gpu]
     ports:
       - 11434:11434
-    environment:
-      - HSA_OVERRIDE_GFX_VERSION=11.0.0
     volumes:
       - ./data/ollama:/root/.ollama
       - ./data/models:/models
 
   open-webui:
-    image: ghcr.io/open-webui/open-webui:git-aaefba2
+    image: ghcr.io/open-webui/open-webui:git-4ee5dd5
     container_name: open-webui
     depends_on:
       - ollama
