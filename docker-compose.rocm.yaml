@@ -1,20 +1,18 @@
 services:
   ollama:
-    image: ollama/ollama:0.6.5-rocm
+    image: ollama/ollama:0.6.8-rocm
     container_name: ollama
     devices:
       - /dev/kfd:/dev/kfd
       - /dev/dri:/dev/dri
     ports:
       - 11434:11434
-    environment:
-      - HSA_OVERRIDE_GFX_VERSION=11.0.0
     volumes:
       - ./data/ollama:/root/.ollama
       - ./data/models:/models
 
   open-webui:
-    image: ghcr.io/open-webui/open-webui:git-aaefba2
+    image: ghcr.io/open-webui/open-webui:git-f907e7c
     container_name: open-webui
     depends_on:
       - ollama
