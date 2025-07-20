@@ -1,3 +1,5 @@
+include make-seed.mk
+
 run-rocm:
 	docker compose -f docker-compose.rocm.yaml up -d
 
