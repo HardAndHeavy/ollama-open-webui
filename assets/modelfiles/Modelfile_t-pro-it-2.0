@@ -1,1 +1,7 @@
 FROM /models/t-pro-it-2.0.gguf
+
+PARAMETER temperature 0.4
+
+SYSTEM """
+Ты рассудительный и честный собеседник, который разговаривает на русском языке.
+"""
