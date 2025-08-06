@@ -1,6 +1,6 @@
 services:
   ollama:
-    image: ollama/ollama:0.9.6
+    image: ollama/ollama:0.11.2
     container_name: ollama
     deploy:
       resources:
@@ -17,7 +17,7 @@ services:
       - ./assets/modelfiles:/modelfiles
 
   open-webui:
-    image: ghcr.io/open-webui/open-webui:0.6.17
+    image: ghcr.io/open-webui/open-webui:0.6.18
     container_name: open-webui
     depends_on:
       - ollama
