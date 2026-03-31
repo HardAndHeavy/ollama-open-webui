@@ -1,6 +1,6 @@
 services:
   ollama:
-    image: ollama/ollama:0.13.5-rocm
+    image: ollama/ollama:0.18.2-rocm
     container_name: ollama
     devices:
       - /dev/kfd:/dev/kfd
@@ -15,7 +15,7 @@ services:
       - ./assets/modelfiles:/modelfiles
 
   open-webui:
-    image: ghcr.io/open-webui/open-webui:0.6.43
+    image: ghcr.io/open-webui/open-webui:0.8.10
     container_name: open-webui
     depends_on:
       - ollama
